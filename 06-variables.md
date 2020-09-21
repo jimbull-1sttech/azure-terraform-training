@@ -79,6 +79,8 @@ resource "azurerm_resource_group" "training" {
   location = var.location
 }
 
+...
+
 resource "azurerm_virtual_machine" "training" {
   name                  = "${var.prefix}vm"
   location              = azurerm_resource_group.training.location
