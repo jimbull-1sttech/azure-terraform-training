@@ -133,6 +133,7 @@ Update your `terraform.tfvars` file with the following information, replacing ``
 prefix   = "###"
 location = "East US"
 username = "Plankton"
+vm_size  = "Standard_A2_v2"
 ```
 
 - Run a `terraform init`
@@ -220,7 +221,7 @@ resource "azurerm_virtual_machine" "main" {
 Attempt to destroy the existing infrastructure. You should see the error that follows.
 
 ```shell
-terraform destroy -force
+terraform destroy -auto-approve
 ```
 
 ```
@@ -258,7 +259,7 @@ resource "azurerm_virtual_machine" "main" {
 Finally, run `destroy`.
 
 ```shell
-terraform destroy -force
+terraform destroy -auto-approve
 ```
 
 The command should now succeed and your resources should be destroyed.
